@@ -87,3 +87,43 @@ Happy modeling!
 [0m16:57:11.565438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2d17359e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2d191ed7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2d15d04410>]}
 [0m16:57:11.566010 [debug] [MainThread]: Flushing usage events
 [0m16:57:11.584332 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:55:38.860788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94b2f88ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94b365bf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94b32a2720>]}
+
+
+============================== 17:55:38.911352 | acfd4321-c0ee-4056-b415-f6b64a2b9d9f ==============================
+[0m17:55:38.911352 [info ] [MainThread]: Running with dbt=1.9.4
+[0m17:55:38.912129 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/config/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:55:38.965006 [info ] [MainThread]: dbt version: 1.9.4
+[0m17:55:38.965616 [info ] [MainThread]: python version: 3.12.3
+[0m17:55:38.966064 [info ] [MainThread]: python path: /app/venv/bin/python
+[0m17:55:38.966490 [info ] [MainThread]: os info: Linux-4.14.355-277.643.amzn2.x86_64-x86_64-with-glibc2.39
+[0m17:55:39.100685 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.postgres'
+[0m17:55:39.101472 [info ] [MainThread]: Using profiles dir at /config/.dbt
+[0m17:55:39.101862 [info ] [MainThread]: Using profiles.yml file at /config/.dbt/profiles.yml
+[0m17:55:39.102185 [info ] [MainThread]: Using dbt_project.yml file at /config/workspace/dbt_postgres_project/dbt/dbt_postgres/dbt_project.yml
+[0m17:55:39.102524 [info ] [MainThread]: Configuration:
+[0m17:55:39.102850 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m17:55:39.103160 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:55:39.103464 [info ] [MainThread]: Required dependencies:
+[0m17:55:39.103797 [debug] [MainThread]: Executing "git --help"
+[0m17:55:39.109870 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:55:39.110396 [debug] [MainThread]: STDERR: "b''"
+[0m17:55:39.110785 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:55:39.111138 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m17:55:39.111529 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m17:55:39.111859 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "my_postgres", target "dev" invalid: Runtime Error
+    Could not find adapter type postgres!
+
+
+[0m17:55:39.112183 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </config/workspace/dbt_postgres_project/dbt/dbt_postgres/dbt_project.yml> not found
+
+[0m17:55:39.114044 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.3131336, "process_in_blocks": "2624", "process_kernel_time": 0.164306, "process_mem_max_rss": "121016", "process_out_blocks": "16", "process_user_time": 3.637719}
+[0m17:55:39.114548 [debug] [MainThread]: Command `dbt debug` failed at 17:55:39.114431 after 0.31 seconds
+[0m17:55:39.115003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94b3ae7440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94b296c140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94b35f9af0>]}
+[0m17:55:39.115440 [debug] [MainThread]: Flushing usage events
+[0m17:55:39.131460 [debug] [MainThread]: An error was encountered while trying to flush usage events
