@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: stg_actor
+    description: "Model stagingowy dla danych aktorow z tabeli zrodlowej 'actor'."
+    columns:
+      - name: actor_id
+        description: "Unikalny identyfikator aktora."
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "Imie aktora."
+        tests:
+          - not_null
+
+      - name: last_name
+        description: "Nazwisko aktora."
+        tests:
+          - not_null
+
+
+  - name: stg_category
+    description: "Model stagingowy dla kategorii filmow z tabeli 'category'."
+    columns:
+      - name: category_id
+        description: "Unikalny identyfikator kategorii."
+        tests:
+          - not_null
+          - unique
+
+      - name: name
+        description: "Nazwa kategorii filmowej."
+        tests:
+          - not_null
+          - unique
+
+
+  - name: stg_customer
+    description: "Model stagingowy dla klientow z tabeli 'customer'."
+    columns:
+      - name: customer_id
+        description: "Unikalny identyfikator klienta."
+        tests:
+          - not_null
+          - unique
+
+      - name: email
+        description: "Adres e-mail klienta."
+        tests:
+          - not_null
+          - unique
+
+      - name: store_id
+        description: "Id sklepu, do ktorego przypisany jest klient."
+        tests:
+          - not_null
+
+      - name: active
+        description: "Status aktywnosci klienta (0 - nieaktywny, 1 - aktywny)."
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              description: "Dozwolone wartosci to 0 (nieaktywny) i 1 (aktywny)."
+
+  - name: stg_film
+    description: "Model stagingowy dla danych o filmach z tabeli 'film'."
+    columns:
+      - name: film_id
+        description: "Unikalny identyfikator filmu."
+        tests:
+          - not_null
+          - unique
+
+      - name: title
+        description: "Tytul filmu."
+        tests:
+          - not_null
+
+      - name: rental_rate
+        description: "Stawka za wypozyczenie filmu."
+        tests:
+          - not_null
+
+      - name: length
+        description: "Dlugosc filmu w minutach."
+        tests:
+          - not_null

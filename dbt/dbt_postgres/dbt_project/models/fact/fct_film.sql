@@ -7,10 +7,6 @@
   )
 }}
 
-with film as (
-    select * from {{ ref('stg_film') }}
-)
-
 select
     count(sf.film_id) as total_number_of_films
 from stg_film sf
