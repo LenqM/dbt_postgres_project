@@ -1,5 +1,5 @@
 -- models/fact/fct_rental.sql
--- Model faktów łączący wypoyczenia z klientami, filmami etc.
+-- Model faktów łączący wypozyczenia z klientami, filmami etc.
 
 {{ 
   config(

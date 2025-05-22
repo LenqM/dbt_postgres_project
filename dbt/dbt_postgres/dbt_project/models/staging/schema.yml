@@ -20,6 +20,8 @@ models:
         tests:
           - not_null
 
+      - name: last_update
+        description: "Data ostatniej aktualizacji."
 
   - name: stg_category
     description: "Model stagingowy dla kategorii filmow z tabeli 'category'."
@@ -36,6 +38,8 @@ models:
           - not_null
           - unique
 
+      - name: last_update
+        description: "Data ostatniej aktualizacji."
 
   - name: stg_customer
     description: "Model stagingowy dla klientow z tabeli 'customer'."
@@ -64,6 +68,24 @@ models:
               values: [0, 1]
               description: "Dozwolone wartosci to 0 (nieaktywny) i 1 (aktywny)."
 
+      - name: address_id
+        description: "Id adresu klienta."
+
+      - name: first_name
+        description: "Imie klienta."
+
+      - name: last_name
+        description: "Nazwisko klienta."
+      
+      - name: activebool
+        description: "Status aktywnosci klienta w formacie boolean."
+
+      - name: create_date
+        description: "Data utworzenia rekordu."
+      
+      - name: last_update
+        description: "Data ostatniej aktualizacji rekordu."
+
   - name: stg_film
     description: "Model stagingowy dla danych o filmach z tabeli 'film'."
     columns:
@@ -78,6 +100,15 @@ models:
         tests:
           - not_null
 
+      - name: description
+        description: "Opis filmu."
+
+      - name: release_year
+        description: "Rok premiery."
+      
+      - name: rental_duration
+        description: "Dlugosc wypozyczenia w dniach."
+
       - name: rental_rate
         description: "Stawka za wypozyczenie filmu."
         tests:
@@ -87,3 +118,87 @@ models:
         description: "Dlugosc filmu w minutach."
         tests:
           - not_null
+      
+      - name: replacement_cost
+        description: "Koszt zastapienia."
+      
+      - name: rating
+        description: "Ocena filmu."
+
+      - name: last_update
+        description: "Data ostatniej aktualizacji rekordu."
+
+      - name: special_features
+        description: "Cechy specjalne."
+
+  - name: stg_inventory
+    description: "Model stagingowy dla danych o egzemplarzach filmow z tabeli 'inventory'."
+    columns:
+      - name: inventory_id
+        description: "Identyfikator egzemplarza (kopii fizycznej) filmu."
+
+      - name: film_id
+        description: "Identyfikator filmu."
+
+      - name: store_id
+        description: "Identyfikator wypożyczalni."
+      
+      - name: last_update
+        description: "Data ostatniej aktualizacji rekordu."
+    
+  - name: stg_rental
+    description: "Model stagingowy dla danych o wypozyczeniach."
+    columns:
+      - name: rental_id
+        description: "Identyfikator wypozyczenia."
+
+      - name: rental_date
+        description: "Data wypozyczenia."
+
+      - name: inventory_id
+        description: "Identyfikator egzemplarza."
+
+      - name: customer_id
+        description: "Identyfikator klienta."
+
+      - name: return_date
+        description: "Data zwrotu."
+
+      - name: staff_id
+        description: "Identyfikator pracownika wypozyczalni."
+
+      - name: last_update
+        description: "Data ostatniej aktualizacji rekordu."
+
+  - name: stg_rental
+    description: "Model stagingowy dla danych o pracownikach wypozyczalni."
+    columns:
+      - name: staff_id
+        description: "Identyfikator pracownika wypozyczalni."
+
+      - name: first_name
+        description: "Imie pracownika."
+
+      - name: last_name
+        description: "Nazwisko pracownika."
+
+      - name: email
+        description: "Adres email pracownika."
+
+      - name: store_id
+        description: "Identyfikator wypozyczalni."
+
+      - name: active
+        description: "Status aktywnosci pracownika."
+      
+      - name: username
+        description: "Nazwa uzytkowanika."
+      
+      - name: password
+        description: "Haslo."
+
+      - name: last_update
+        description: "Data ostatniej aktualizacji rekordu."
+
+      - name: picture
+        description: "Zdjecie pracownika."  
