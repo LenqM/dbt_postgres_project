@@ -170,7 +170,7 @@ models:
       - name: last_update
         description: "Data ostatniej aktualizacji rekordu."
 
-  - name: stg_rental
+  - name: stg_staff
     description: "Model stagingowy dla danych o pracownikach wypozyczalni."
     columns:
       - name: staff_id
