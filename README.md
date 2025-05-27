@@ -15,7 +15,7 @@ Po wykonaniu `dbt run`, `dbt test` i `dbt docs generate` uruchomiono `dbt docs s
 
 ### 1. **Uruchomienie infrastruktury AWS poprzez terraform** 
 Lokalizacja - folder /infra. Uruchomienie terraform apply, z uprzednio zmienioną nazwą bucketa na własną.
-    1a. Utworzenie tunelu ssh poprzez komendę:
+#### 1a. Utworzenie tunelu ssh poprzez komendę:
 ssh -N -f -L 8888:localhost:8888 -L 8080:localhost:8080 -L 8000:localhost:8000 -i ~/Downloads/kp.pem ec2-user@${aws_instance.lab_instance.public_ip}
 
 ### 2. **Uruchomienie kontenerów na EC2**
