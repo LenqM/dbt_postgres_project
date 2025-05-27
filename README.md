@@ -13,12 +13,13 @@ Po wykonaniu `dbt run`, `dbt test` i `dbt docs generate` uruchomiono `dbt docs s
 
 ## Instrukcja instalacji komponentów na EC2
 
-1. Uruchomienie infrastruktury AWS poprzez terraform - folder /infra, z odpowiednio zmienioną nazwą bucketa na własną.
-1a. Utworzenie tunelu ssh poprzez komendę:
+1. **Uruchomienie infrastruktury AWS poprzez terraform** 
+Lokalizacja - folder /infra, z odpowiednio zmienioną nazwą bucketa na własną.
+### 1a. Utworzenie tunelu ssh poprzez komendę:
 ssh -N -f -L 8888:localhost:8888 -L 8080:localhost:8080 -L 8000:localhost:8000 -i ~/Downloads/kp.pem ec2-user@${aws_instance.lab_instance.public_ip}
 
-2. **Uruchomienie kontenerów na EC2**:
-Dostęp do konsoli na EC2 poprzez komendę: 
+2. **Uruchomienie kontenerów na EC2**
+### Dostęp do konsoli na EC2 poprzez komendę: 
 ssh -i ~/Downloads/kp.pem ec2-user@${aws_instance.lab_instance.public_ip}
 
    * Kontener z PostgreSQL (losowo nadawane nazwy, np. brave_snyder) na porcie 5432. - pobranie i uruchomienie wg. instrukcji README.md - https://github.com/sakiladb/postgres/blob/master/README.md
