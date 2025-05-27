@@ -20,7 +20,7 @@ resource "aws_instance" "lab_instance" {
   subnet_id                   = aws_subnet.public.id
   availability_zone           = aws_subnet.public.availability_zone
   associate_public_ip_address = true
-  key_name                    = "kphome" # Zastąp nazwą swojego klucza SSH
+  key_name                    = "kp" # Zastąp nazwą swojego klucza SSH
   security_groups             = [aws_security_group.allow_ssh.id]
 
   tags = {

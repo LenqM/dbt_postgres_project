@@ -8,7 +8,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "spdb-s1202069-tfstate" # Zastąp nazwą bucketu z lab 1
+    bucket = "spbd-siudzinskim-tfstate" # Zastąp nazwą bucketu z lab 1
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
